@@ -27,17 +27,17 @@ Os registros deverão ser preservados via LocalStorage ao recarregar a página n
 
 ## Integrantes e divisão proposta
 
-A divisão está sujeita à confirmação do grupo. As pendências indicam entregas ainda aguardadas na `main`.
+Julio fica com a coordenação e a integração. Cada colega pode escolher uma das seis tarefas disponíveis e confirmar a escolha com o grupo. As pendências indicam entregas ainda aguardadas na `main`.
 
 | Integrante | Responsabilidade | Situação e próximos passos |
 | --- | --- | --- |
 | Julio Cesar da Pieve | Coordenação e integração | Repositório, GitHub Pages e interface inicial montados. Documentação de planejamento preparada. Revisão e integração das próximas entregas pendentes. |
-| Samuel de Melo Caculo Mbote | HTML | Montar o formulário e a estrutura da listagem. |
-| Luiz Henrique Paolucci Moura Griebler dos Santos | CSS | Estilizar formulário, botões e cards e ajustar o layout para celular. |
-| Pedro Henrique Silgueiro Trimboli Faria | JavaScript | Implementar cadastro, listagem, edição e exclusão. |
-| Oiama Meira Santana | Persistência, pesquisa e status | Implementar LocalStorage, pesquisa, filtros e atualização da situação de adoção. |
-| Thomas Nakamura Bispo | Testes e correções | Executar os cenários, registrar evidências e coordenar a correção e o reteste das falhas. |
-| Thalita Neves de Souza | Documentação e apresentação | Reunir capturas de tela, resultados de testes e boas práticas aplicadas no PDF final. |
+| Colega 01 | HTML | Montar o formulário e a estrutura da listagem. |
+| Colega 02 | CSS | Estilizar formulário, botões e cards e ajustar o layout para celular. |
+| Colega 03 | JavaScript | Implementar cadastro, listagem, edição e exclusão. |
+| Colega 04 | Persistência, pesquisa e status | Implementar LocalStorage, pesquisa, filtros e atualização da situação de adoção. |
+| Colega 05 | Testes e correções | Executar os cenários, registrar evidências e coordenar a correção e o reteste das falhas. |
+| Colega 06 | Documentação e apresentação | Reunir capturas de tela, resultados de testes e boas práticas aplicadas no PDF final. |
 
 ## Documentação
 
