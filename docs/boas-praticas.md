@@ -1,31 +1,38 @@
-# Plano de testes da segunda etapa
+# Boas práticas da segunda etapa
 
-Use este roteiro após integrar as funcionalidades. Todos os casos estão **pendentes de execução**.
+O ponto de partida verificado na `main` é uma página em português com estrutura semântica em HTML, folha de estilo separada e configuração de viewport. Os demais itens deste guia são critérios propostos para a implementação e a revisão.
 
-## Preparação
+## Interface e comportamento
 
-1. Registre o commit em teste, o endereço da versão, a data, o navegador e seu responsável.
-2. Use um perfil de navegador dedicado aos testes, com LocalStorage disponível. Use os dados fictícios abaixo.
-3. Cadastre os dois animais pelos fluxos da aplicação quando disponíveis. Para validar o cadastro do zero, comece com a lista vazia. Reponha os dados necessários entre os casos.
+- Use rótulos associados aos campos do formulário, preserve a navegação por teclado e deixe o foco visível.
+- Informe os erros junto aos campos e indique quando uma lista ou pesquisa estiver vazia. Mostre a situação da adoção em texto.
+- Mantenha em HTML a estrutura, em CSS a apresentação e em JavaScript o comportamento. Revise formulário e listagem em telas estreitas e amplas.
+- Valide os campos obrigatórios antes de gravar e mostre as informações digitadas como texto ao montar os cards.
+- Use dados fictícios em testes e demonstrações. LocalStorage mantém os registros no navegador e na origem em uso. A limpeza dos dados do site pode apagá-los.
 
-| Nome | Espécie | Raça | Idade | Porte | Descrição | Saúde | Status inicial |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Luna | Cachorro | Sem raça definida | 2 anos | Médio | Dócil e sociável | Vacinada | Disponível |
-| Nino | Gato | Sem raça definida | 1 ano | Pequeno | Brincalhão | Vacinado | Disponível |
+## Modelo de dados proposto
 
-## Casos de teste
+Samuel, Pedro e Oiama devem alinhar os nomes dos campos e a forma de armazenamento antes de integrar formulário, listagem e filtros.
 
-| Caso | Cobertura | Procedimento | Resultado esperado | Resultado observado e evidência |
-| --- | --- | --- | --- | --- |
-| CT01 | RF01 | Preencha os campos de Luna e envie o formulário. | Luna é salva uma única vez e aparece na listagem. | Pendente |
-| CT02 | RF01 | Preencha o formulário deixando o nome em branco e tente salvar. | O campo obrigatório é indicado e nenhum registro é incluído. | Pendente |
-| CT03 | RF02 | Consulte a lista após cadastrar Luna e Nino. | A lista mostra os dois registros com seus nomes, espécies e situações. | Pendente |
-| CT04 | RF03 | Altere a idade de Luna para 3 anos e salve. | A lista mostra a nova idade e mantém um único registro de Luna. Os dados de Nino permanecem iguais. | Pendente |
-| CT05 | RF04 | Exclua Nino, confirmando se a interface solicitar. | Nino sai da lista e Luna permanece. | Pendente |
-| CT06 | RF05 | Com Luna e Nino cadastrados, pesquise por Luna e depois por um nome ausente. | A primeira pesquisa mostra apenas Luna. A segunda indica que não há resultados. | Pendente |
-| CT07 | RF05 | Com os dois animais cadastrados, aplique o filtro de espécie Gato e depois limpe o filtro. | O filtro mostra apenas Nino. Ao limpar, ambos voltam à lista. | Pendente |
-| CT08 | RF06 | Altere a situação de Luna para Em processo de adoção e depois para Adotado. | A interface exibe a situação correspondente após cada alteração. | Pendente |
-| CT09 | Persistência | Cadastre Luna e Nino, edite Luna, altere sua situação, exclua Nino e recarregue a página no mesmo navegador. | Luna reaparece com os dados e a situação atualizados. Nino continua ausente. | Pendente |
-| CT10 | Responsividade | Em uma janela de 360 px e depois em tela ampla, use o formulário e a listagem. | Campos, botões e conteúdo ficam acessíveis sem rolagem horizontal da página. | Pendente |
+| Campo | Exemplo ou regra |
+| --- | --- |
+| ID | Identificador único e estável, gerado pela aplicação. |
+| Nome | Luna |
+| Espécie | Cachorro |
+| Raça | Sem raça definida |
+| Idade | 2 anos. Combine o formato e a unidade com o grupo. |
+| Porte | Médio |
+| Descrição | Dócil e sociável |
+| Saúde | Vacinada |
+| Status | Disponível, Em processo de adoção ou Adotado. |
 
-Após cada execução, registre **Passou**, **Falhou** ou **Bloqueado**, descreva o resultado observado e inclua o link ou nome da evidência. Em caso de falha, anote os passos para reproduzir, o efeito observado e o commit usado no reteste.
+## Revisão e integração
+
+1. Trabalhe em uma branch dedicada à sua contribuição e use mensagens de commit que descrevam a mudança.
+2. Abra um pull request com um resumo, o requisito atendido e os passos para verificar a alteração.
+3. Revise os trechos afetados e execute os casos correspondentes do [plano de testes](plano-de-testes.md). Guarde evidências das verificações.
+4. Após integrar, faça uma nova verificação na versão publicada no GitHub Pages.
+
+## PDF e apresentação
+
+Inclua as funcionalidades implementadas, exemplos de boas práticas aplicadas, capturas da aplicação funcionando, a tabela com os resultados dos testes e uma conclusão com as limitações observadas. Na demonstração, use dados fictícios para percorrer cadastro, consulta, edição, exclusão, pesquisa, filtros e atualização de status. Recarregue a página para demonstrar a persistência. Um vídeo curto é opcional.
