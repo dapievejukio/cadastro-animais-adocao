@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Animais Para Adoção</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Cadastro de Animais Para Adoção</h1>
+
+    <form id="formAnimal">
+        <input type="hidden" id="animalId">
+
+        <div class="row">
+            <div class="form-group">
+                <label for="nome">Nome do Animal *</label>
+                <input type="text" id="nome" placeholder="Ex: Rex" required>
+            </div>
+            <div class="form-group">
+                <label for="especie">Espécie *</label>
+                <select id="especie" required>
+                    <option value="">Selecione...</option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="porte">Porte *</label>
+                <select id="porte" required>
+                    <option value="">Selecione...</option>
+                    <option value="Pequeno">Pequeno</option>
+                    <option value="Médio">Médio</option>
+                    <option value="Grande">Grande</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label for="raca">Raça</label>
+                <input type="text" id="raca" placeholder="Ex: Labrador">
+            </div>
+            <div class="form-group">
+                <label for="idade">Idade (anos)</label>
+                <input type="number" id="idade" min="0" placeholder="Ex: 3">
+            </div>
+            <div class="form-group">
+                <label for="saude">Saúde *</label>
+                <select id="saude" required>
+                    <option value="">Selecione...</option>
+                    <option value="Saudável">Saudável</option>
+                    <option value="Em tratamento">Em tratamento</option>
+                    <option value="Cuidados especiais">Cuidados especiais</option>
+                    <option value="Vacinado / Castrado">Vacinado / Castrado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Status *</label>
+                <select id="status" required>
+                    <option value="Disponível">Disponível</option>
+                    <option value="Em adoção">Em adoção</option>
+                    <option value="Adotado">Adotado</option>
+                    <option value="Em observação">Em observação</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="3" placeholder="Comportamento, histórico ou observações gerais..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="tutor">Nome do Tutor (Opcional)</label>
+            <input type="text" id="tutor" placeholder="Ex: João Silva (deixe em branco se não houver)">
+        </div>
+
+        <button type="submit" class="btn-salvar" id="btnSalvar">Cadastrar Animal</button>
+        <button type="button" class="btn-cancelar" id="btnCancelar" onclick="limparFormulario()">Cancelar Edição</button>
+    </form>
+
+    <div class="busca-box">
+        <h2>Consulta de Animais</h2>
+        <input type="text" id="campoBusca" placeholder="Pesquisar por nome, espécie, tutor ou status..." onkeyup="renderizarTabela()">
+    </div>
+
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Espécie / Raça</th>
+                    <th>Porte</th>
+                    <th>Idade</th>
+                    <th>Saúde</th>
+                    <th>Status</th>
+                    <th>Descrição</th>
+                    <th>Tutor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaAnimais">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+ <footer> Projeto Integrador — Boas Práticas de Desenvolvimento de Software </footer>
+
+</body>
+</html>
+
