@@ -1,6 +1,6 @@
 # Plano de testes da segunda etapa
 
-Execução em 23/11/2026 no navegador integrado ao ChatGPT, na [versão publicada em GitHub Pages](https://dapievejukio.github.io/cadastro-animais-adocao/animais/). Referência da revisão na `main`: `841b6fa`. Os registros fictícios foram removidos, e a tabela voltou ao estado vazio após recarregar. As observações abaixo são evidências textuais da execução.
+Execução em 23/11/2026 no navegador, na [versão publicada em GitHub Pages](https://dapievejukio.github.io/cadastro-animais-adocao/animais/). Referência da revisão na `main`: `841b6fa`. Os registros fictícios foram removidos, e a tabela voltou ao estado vazio após recarregar. As observações abaixo são evidências textuais da execução.
 
 ## Preparação
 
