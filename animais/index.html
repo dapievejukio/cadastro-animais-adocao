@@ -84,7 +84,20 @@
 
     <div class="busca-box">
         <h2>Consulta de Animais</h2>
-        <input type="text" id="campoBusca" placeholder="Pesquisar por nome, espécie, tutor ou status..." onkeyup="renderizarTabela()">
+        <div class="row">
+            <div class="form-group">
+                <label for="campoBusca">Pesquisar animais</label>
+                <input type="search" id="campoBusca" placeholder="Nome, espécie, tutor ou status">
+            </div>
+            <div class="form-group">
+                <label for="filtroEspecie">Filtrar por espécie</label>
+                <select id="filtroEspecie">
+                    <option value="">Todas as espécies</option>
+                    <option value="Cachorro">Cachorro</option>
+                    <option value="Gato">Gato</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     <div class="table-responsive">
