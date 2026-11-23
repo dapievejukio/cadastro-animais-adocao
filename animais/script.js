@@ -1,6 +1,9 @@
 let animais = JSON.parse(localStorage.getItem('animais')) || [];
 
 const form = document.getElementById('formAnimal');
+const campoNome = document.getElementById('nome');
+const campoBusca = document.getElementById('campoBusca');
+const filtroEspecie = document.getElementById('filtroEspecie');
 const tabela = document.getElementById('tabelaAnimais');
 const btnSalvar = document.getElementById('btnSalvar');
 const btnCancelar = document.getElementById('btnCancelar');
@@ -9,11 +12,21 @@ function salvarNoStorage() {
     localStorage.setItem('animais', JSON.stringify(animais));
 }
 
+campoNome.addEventListener('input', () => campoNome.setCustomValidity(''));
+campoBusca.addEventListener('input', renderizarTabela);
+filtroEspecie.addEventListener('change', renderizarTabela);
+
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const id = document.getElementById('animalId').value;
-    const nome = document.getElementById('nome').value.trim();
+    const nome = campoNome.value.trim();
+    if (!nome) {
+        campoNome.setCustomValidity('Informe o nome do animal.');
+        campoNome.reportValidity();
+        return;
+    }
+
     const especie = document.getElementById('especie').value;
     const porte = document.getElementById('porte').value;
     const raca = document.getElementById('raca').value.trim() || 'SRD';
@@ -54,7 +67,8 @@ function editarAnimal(id) {
     if (!animal) return;
 
     document.getElementById('animalId').value = animal.id;
-    document.getElementById('nome').value = animal.nome;
+    campoNome.setCustomValidity('');
+    campoNome.value = animal.nome;
     document.getElementById('especie').value = animal.especie;
     document.getElementById('porte').value = animal.porte || '';
     document.getElementById('raca').value = animal.raca === 'SRD' ? '' : animal.raca;
@@ -79,20 +93,24 @@ function excluirAnimal(id) {
 
 function limparFormulario() {
     form.reset();
+    campoNome.setCustomValidity('');
     document.getElementById('animalId').value = '';
     btnSalvar.textContent = 'Cadastrar Animal';
     btnCancelar.style.display = 'none';
 }
 
 function renderizarTabela() {
-    const termo = document.getElementById('campoBusca').value.toLowerCase();
+    const termo = campoBusca.value.trim().toLowerCase();
+    const especie = filtroEspecie.value;
     tabela.innerHTML = '';
 
-    const filtrados = animais.filter(animal => 
+    const filtrados = animais.filter(animal =>
+        (!especie || animal.especie === especie) && (
         animal.nome.toLowerCase().includes(termo) ||
         animal.especie.toLowerCase().includes(termo) ||
         (animal.tutor && animal.tutor.toLowerCase().includes(termo)) ||
         (animal.status && animal.status.toLowerCase().includes(termo))
+        )
     );
 
     if (filtrados.length === 0) {
