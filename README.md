@@ -12,15 +12,15 @@ Julio criou o repositório, configurou o GitHub Pages e publicou a estrutura ini
 
 ## Requisitos funcionais
 
-A numeração abaixo organiza os requisitos da segunda etapa para acompanhamento e testes. A situação reflete o teste da versão publicada em 23/11/2026.
+A numeração abaixo organiza os requisitos da segunda etapa para acompanhamento e testes. A situação inclui o reteste após as correções de nome, filtro e responsividade.
 
 | ID | Requisito | Situação |
 | --- | --- | --- |
-| RF01 | Cadastrar um animal e validar os campos obrigatórios. | Implementado. O formulário bloqueia nome vazio, mas aceita apenas espaços. |
+| RF01 | Cadastrar um animal e validar os campos obrigatórios. | Validado. O formulário bloqueia nomes vazios ou preenchidos só com espaços. |
 | RF02 | Consultar os animais em uma listagem dinâmica. | Validado |
 | RF03 | Editar os dados de um animal cadastrado. | Validado |
 | RF04 | Excluir um animal cadastrado. | Validado |
-| RF05 | Pesquisar e filtrar os animais cadastrados. | Pesquisa por texto validada, inclusive por espécie. Filtro dedicado a confirmar com o grupo. |
+| RF05 | Pesquisar e filtrar os animais cadastrados. | Validado. A busca por texto funciona em conjunto com o filtro de espécie. |
 | RF06 | Atualizar a situação de adoção de um animal. | Validado |
 
 A persistência via LocalStorage foi validada ao recarregar a página no mesmo navegador, inclusive após editar e excluir registros.
