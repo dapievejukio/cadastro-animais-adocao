@@ -32,11 +32,11 @@ Julio fica com a coordenação e a integração. Cada colega pode escolher uma d
 | Integrante | Responsabilidade | Situação e próximos passos |
 | --- | --- | --- |
 | Julio Cesar da Pieve | Coordenação e integração | Repositório, GitHub Pages e interface inicial montados. Documentação de planejamento preparada. Revisão e integração das próximas entregas pendentes. |
-| Colega 01 | HTML | Montar o formulário e a estrutura da listagem. |
-| Colega 02 | CSS | Estilizar formulário, botões e cards e ajustar o layout para celular. |
-| Colega 03 | JavaScript | Implementar cadastro, listagem, edição e exclusão. |
+| Oima | HTML | Montar o formulário e a estrutura da listagem. |
+| Oiama | CSS | Estilizar formulário, botões e cards e ajustar o layout para celular. |
+| Oiama | JavaScript | Implementar cadastro, listagem, edição e exclusão. |
 | Colega 04 | Persistência, pesquisa e status | Implementar LocalStorage, pesquisa, filtros e atualização da situação de adoção. |
-| Colega 05 | Testes e correções | Executar os cenários, registrar evidências e coordenar a correção e o reteste das falhas. |
+| Julio | Testes e correções | Executar os cenários, registrar evidências e coordenar a correção e o reteste das falhas. |
 | Colega 06 | Documentação e apresentação | Reunir capturas de tela, resultados de testes e boas práticas aplicadas no PDF final. |
 
 ## Documentação
